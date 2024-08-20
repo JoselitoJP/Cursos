@@ -9,23 +9,30 @@ void main() {
   bool isMadura = funcEstaMadura(diasDesdeColheita);
 
   print(isMadura);
+
+  mostrarMadura("Uva", 40, cor: "roxa");
 }
 
 /*
-  -Posicionais Obrigatórios
-  -Nomeados Opcionais 
-  -Parâmetros "Padrão"
+  1 - Posicionais Obrigatórios
+  2 - Nomeados Opcionais 
+  3 - Parâmetros "Padrão"
   -Modificador "Required" 
 */
 
 //04º aula do Modulo 02 Dart:entenda a Orientção a Objeto
 
-mostrarMadura(String nome, int dias){ //void estaMadura(){}
+mostrarMadura(String nome, int dias, {required String cor/*="Semcor"*/}){ //void estaMadura({String? cor}){}
   if (dias >= 30) {
     print("A $nome está madura!");
   } else {
     print("A $nome não está madura!");
   }
+
+  /*if (cor != null) {
+    print("A $nome é $cor");
+  }*/
+
 }
 
 bool funcEstaMadura(int dias){
