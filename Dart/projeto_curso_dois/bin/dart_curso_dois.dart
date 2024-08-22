@@ -14,6 +14,12 @@ void main() {
  //07º aula do Modulo 02 Dart:entenda a Orientção a Objeto
   int quantosDias = funcQuantosDiasMadura(diasDesdeColheita);
   print(quantosDias);
+
+//05º aula do Modulo 03 Dart:entenda a Orientção a Objeto
+  Fruta fruta01 = Fruta(nome, peso, cor, sabor, diasDesdeColheita); 
+  Fruta fruta02 = Fruta("UVA", 40, "Roxo", "Doce", 20);
+
+  print(fruta01.nome);
 }
 
 //03º aula do Modulo 03 Dart:entenda a Orientção a Objeto
@@ -24,6 +30,11 @@ class Fruta{
   String sabor;
   int diasDesdeColheita;
   bool? isMadura;
+
+//05º aula do Modulo 03 Dart:entenda a Orientção a Objeto
+  Fruta(this.nome, this.peso, this.cor, this.sabor, this.diasDesdeColheita, {this.isMadura});
+
+
 }
 
  int funcQuantosDiasMadura(int dias){
