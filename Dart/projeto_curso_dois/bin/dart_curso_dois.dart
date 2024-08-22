@@ -20,21 +20,10 @@ void main() {
   Fruta fruta02 = Fruta("UVA", 40, "Roxo", "Doce", 20);
 
   print(fruta01.nome);
-}
 
-//03º aula do Modulo 03 Dart:entenda a Orientção a Objeto
-class Fruta{
-  String nome;
-  double peso;
-  String cor;
-  String sabor;
-  int diasDesdeColheita;
-  bool? isMadura;
-
-//05º aula do Modulo 03 Dart:entenda a Orientção a Objeto
-  Fruta(this.nome, this.peso, this.cor, this.sabor, this.diasDesdeColheita, {this.isMadura});
-
-
+  fruta01.estaMadura(30);
+  fruta02.estaMadura(60);
+  
 }
 
  int funcQuantosDiasMadura(int dias){
@@ -70,4 +59,23 @@ bool funcEstaMadura(int dias){
     return false;
   }
 
+}
+
+//03º aula do Modulo 03 Dart:entenda a Orientção a Objeto
+class Fruta{
+  String nome;
+  double peso;
+  String cor;
+  String sabor;
+  int diasDesdeColheita;
+  bool? isMadura;
+
+//05º aula do Modulo 03 Dart:entenda a Orientção a Objeto
+  Fruta(this.nome, this.peso, this.cor, this.sabor, this.diasDesdeColheita, {this.isMadura});
+
+  estaMadura(int diasParaMadura){
+//07º aula do Modulo 03 Dart:entenda a Orientção a Objeto
+    isMadura = diasDesdeColheita >= diasParaMadura;
+    print("A $nome foi colhida a $diasDesdeColheita dias, e precisa de $diasParaMadura para poder comer. Ele está madura? $isMadura");
+  }
 }
