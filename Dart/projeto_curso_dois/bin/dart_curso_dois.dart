@@ -16,6 +16,16 @@ void main() {
   print(quantosDias);
 }
 
+//03º aula do Modulo 03 Dart:entenda a Orientção a Objeto
+class Fruta{
+  String nome;
+  double peso;
+  String cor;
+  String sabor;
+  int diasDesdeColheita;
+  bool? isMadura;
+}
+
  int funcQuantosDiasMadura(int dias){
   int diasParaMadura = 30;
   int quantosDiasFaltam = diasParaMadura - dias;
