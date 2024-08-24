@@ -97,3 +97,27 @@ class Legumes{
 
   Legumes(this.nome, this.peso, this.cor, this.isPrecisaCozinhar);
 }
+
+class Citricas{
+  String nome;
+  double peso;
+  String cor;
+  int diasDesdeColheita;
+  bool? isMadura;
+  double nivelAzedo;
+
+  Citricas(this.nome, this.peso, this.cor, this.diasDesdeColheita, this.nivelAzedo);
+
+}
+
+class Nozes{
+  String nome;
+  double peso;
+  String cor;
+  int diasDesdeColheita;
+  bool? isMadura;
+  double porcentagemOleoNatural;
+
+  Nozes(this.nome, this.peso, this.cor, this.diasDesdeColheita, this.porcentagemOleoNatural);
+  
+}
