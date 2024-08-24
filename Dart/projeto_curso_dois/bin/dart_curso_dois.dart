@@ -79,3 +79,21 @@ class Fruta{
     print("A $nome foi colhida a $diasDesdeColheita dias, e precisa de $diasParaMadura para poder comer. Ele está madura? $isMadura");
   }
 }
+
+//02º aula do Modulo 04 Dart:entenda a Orientção a Objeto
+class Alimento{
+  String nome;
+  double peso;
+  String cor;
+  Alimento(this.nome, this.peso, this.cor);
+
+}
+
+class Legumes{
+  String nome;
+  double peso;
+  String cor;
+  bool isPrecisaCozinhar;
+
+  Legumes(this.nome, this.peso, this.cor, this.isPrecisaCozinhar);
+}
