@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 void main() {
   print("Ola, Mundo! Você esta feliz? ");
 //03º aula do Modulo 02 Dart:entenda a Orientção a Objeto
@@ -60,18 +62,29 @@ bool funcEstaMadura(int dias){
   }
 
 }
-
-//03º aula do Modulo 03 Dart:entenda a Orientção a Objeto
-class Fruta{
+//04º aula do Modulo 04 Dart:entenda a Orientção a Objeto
+//02º aula do Modulo 04 Dart:entenda a Orientção a Objeto
+class Alimento{
   String nome;
   double peso;
   String cor;
+  Alimento(this.nome, this.peso, this.cor);
+
+  void printAlimento(){
+    print('Este(a) $nome pesa $peso gramas é da cor $cor.');
+
+  }
+
+}
+
+//03º aula do Modulo 03 Dart:entenda a Orientção a Objeto
+class Fruta{
   String sabor;
   int diasDesdeColheita;
   bool? isMadura;
 
 //05º aula do Modulo 03 Dart:entenda a Orientção a Objeto
-  Fruta(this.nome, this.peso, this.cor, this.sabor, this.diasDesdeColheita, {this.isMadura});
+  Fruta(String nome, String peso, String cor, this.sabor, this.diasDesdeColheita, {this.isMadura}):super(nome, peso, cor);
 
   estaMadura(int diasParaMadura){
 //07º aula do Modulo 03 Dart:entenda a Orientção a Objeto
@@ -80,22 +93,19 @@ class Fruta{
   }
 }
 
-//02º aula do Modulo 04 Dart:entenda a Orientção a Objeto
-class Alimento{
-  String nome;
-  double peso;
-  String cor;
-  Alimento(this.nome, this.peso, this.cor);
+class Legumes extends Alimento {
 
-}
-
-class Legumes{
-  String nome;
-  double peso;
-  String cor;
   bool isPrecisaCozinhar;
 
-  Legumes(this.nome, this.peso, this.cor, this.isPrecisaCozinhar);
+  Legumes(String nome, double peso, String cor, this.isPrecisaCozinhar):super(nome, peso, cor);
+
+  void Cozinhar(){
+    if (isPrecisaCozinhar) {
+      print("Pronto, o $nome está cozinhando!");
+    }else{
+      print('Nem precisa cozinhar!');
+    }
+  }
 }
 
 class Citricas{
@@ -119,5 +129,5 @@ class Nozes{
   double porcentagemOleoNatural;
 
   Nozes(this.nome, this.peso, this.cor, this.diasDesdeColheita, this.porcentagemOleoNatural);
-  
+
 }
