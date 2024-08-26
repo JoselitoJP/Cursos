@@ -26,6 +26,7 @@ void main() {
   fruta01.estaMadura(30);
   fruta02.estaMadura(60);
 
+//05º aula do Modulo 04 Dart:entenda a Orientção a Objeto
   Legumes mandioca1 = Legumes('Macaxeira', 1200, 'Marom', true);
   Fruta banana1 = Fruta("Banana", 75, 'Amarela', 'Doce', 12);
   Nozes macadamia1 = Nozes('Macadamia', 2, 'Branco Amarelado', 'Doce', 20, 35);
@@ -113,7 +114,7 @@ class Fruta extends Alimento{
   }
 }
 
-class Legumes extends Alimento {
+class Legumes extends Alimento implements Bolo{
 
   bool isPrecisaCozinhar;
 
@@ -126,6 +127,21 @@ class Legumes extends Alimento {
       print('Nem precisa cozinhar!');
     }
   }
+
+  //02º aula do Modulo 05 Dart:entenda a Orientção a Objeto
+  @override
+  void assar(){
+    //TODO: implement assar
+  }
+  @override
+  void fazerMassa() {
+    //TODO: implement fazerMassa
+  }
+  @override
+  void separarIngredientes(){
+    //TODO: implement separarIngredientes
+  }
+
 }
 
 class Citricas extends Fruta{
@@ -150,5 +166,15 @@ class Nozes extends Fruta{
   Nozes(String nome, double peso, String cor,String sabor,int diasDesdeColheita, this.porcentagemOleoNatural)
   :super(nome, peso, cor, sabor,diasDesdeColheita);
 
+}
+
+//02º aula do Modulo 05 Dart:entenda a Orientção a Objeto
+abstract class Bolo{
+  //separa os ingredientes
+  void separarIngredientes();
+  //fazer massa
+  void fazerMassa();
+  //assar
+  void assar();
 
 }
