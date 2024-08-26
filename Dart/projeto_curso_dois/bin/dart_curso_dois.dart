@@ -25,7 +25,23 @@ void main() {
 
   fruta01.estaMadura(30);
   fruta02.estaMadura(60);
-  
+
+  Legumes mandioca1 = Legumes('Macaxeira', 1200, 'Marom', true);
+  Fruta banana1 = Fruta("Banana", 75, 'Amarela', 'Doce', 12);
+  Nozes macadamia1 = Nozes('Macadamia', 2, 'Branco Amarelado', 'Doce', 20, 35);
+  Citricas limao1 = Citricas('Limão', 100, 'Verde', 'Azedo', 5, 9);
+
+  mandioca1.printAlimento();
+  banana1.printAlimento();
+  macadamia1.printAlimento();
+  limao1.printAlimento();
+
+  mandioca1.Cozinhar(); 
+  //limao1.Cozinhar();|não Funciona
+  //mandioca1.fazerSuco();|não Funciona
+  limao1.fazerSuco();
+
+
 }
 
  int funcQuantosDiasMadura(int dias){
@@ -78,18 +94,22 @@ class Alimento{
 }
 
 //03º aula do Modulo 03 Dart:entenda a Orientção a Objeto
-class Fruta{
+class Fruta extends Alimento{
   String sabor;
   int diasDesdeColheita;
   bool? isMadura;
 
 //05º aula do Modulo 03 Dart:entenda a Orientção a Objeto
-  Fruta(String nome, String peso, String cor, this.sabor, this.diasDesdeColheita, {this.isMadura}):super(nome, peso, cor);
+  Fruta(String nome, double peso, String cor, this.sabor, this.diasDesdeColheita, {this.isMadura}):super(nome, peso, cor);
 
   estaMadura(int diasParaMadura){
 //07º aula do Modulo 03 Dart:entenda a Orientção a Objeto
     isMadura = diasDesdeColheita >= diasParaMadura;
     print("A $nome foi colhida a $diasDesdeColheita dias, e precisa de $diasParaMadura para poder comer. Ele está madura? $isMadura");
+  }
+
+  void fazerSuco(){
+    print('Você fez um ótimo suco de $nome');
   }
 }
 
@@ -108,26 +128,27 @@ class Legumes extends Alimento {
   }
 }
 
-class Citricas{
-  String nome;
-  double peso;
-  String cor;
-  int diasDesdeColheita;
-  bool? isMadura;
+class Citricas extends Fruta{
+  
   double nivelAzedo;
 
-  Citricas(this.nome, this.peso, this.cor, this.diasDesdeColheita, this.nivelAzedo);
-
+  Citricas(String nome, double peso, String cor,String sabor,int diasDesdeColheita, this.nivelAzedo)
+  :super(nome, peso, cor, sabor,diasDesdeColheita);
+  void existeRefri(bool existe){
+    if (existe) {
+      print('Existe Refrigerante de $nome');
+    }else{
+      print('Não existe refri de $nome');
+    }
+  }
 }
 
-class Nozes{
-  String nome;
-  double peso;
-  String cor;
-  int diasDesdeColheita;
-  bool? isMadura;
+class Nozes extends Fruta{
+  
   double porcentagemOleoNatural;
 
-  Nozes(this.nome, this.peso, this.cor, this.diasDesdeColheita, this.porcentagemOleoNatural);
+  Nozes(String nome, double peso, String cor,String sabor,int diasDesdeColheita, this.porcentagemOleoNatural)
+  :super(nome, peso, cor, sabor,diasDesdeColheita);
+
 
 }
