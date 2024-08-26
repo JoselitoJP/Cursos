@@ -41,8 +41,10 @@ void main() {
   //limao1.Cozinhar();|não Funciona
   //mandioca1.fazerSuco();|não Funciona
   limao1.fazerSuco();
-
-
+  
+  //02º aula do Modulo 05 Dart:entenda a Orientção a Objeto
+  banana1.separarIngredientes();
+  macadamia1.fazerMassa();
 }
 
  int funcQuantosDiasMadura(int dias){
@@ -95,7 +97,7 @@ class Alimento{
 }
 
 //03º aula do Modulo 03 Dart:entenda a Orientção a Objeto
-class Fruta extends Alimento{
+class Fruta extends Alimento implements Bolo{
   String sabor;
   int diasDesdeColheita;
   bool? isMadura;
@@ -112,6 +114,25 @@ class Fruta extends Alimento{
   void fazerSuco(){
     print('Você fez um ótimo suco de $nome');
   }
+
+  //02º aula do Modulo 05 Dart:entenda a Orientção a Objeto
+  @override
+  void separarIngredientes(){
+    //TODO: implement separarIngredientes
+    print('Catar a $nome');
+  }
+  @override
+  void fazerMassa() {
+    //TODO: implement fazerMassa
+    print('Misturar a fruta com Farinha, açucar, ovos...');
+  }
+  @override
+  void assar(){
+    //TODO: implement assar
+    print('Colocar no forno');
+  }
+
+
 }
 
 class Legumes extends Alimento implements Bolo{
@@ -166,6 +187,13 @@ class Nozes extends Fruta{
   Nozes(String nome, double peso, String cor,String sabor,int diasDesdeColheita, this.porcentagemOleoNatural)
   :super(nome, peso, cor, sabor,diasDesdeColheita);
 
+  //02º aula do Modulo 05 Dart:entenda a Orientção a Objeto
+  @override
+  void fazerMassa() {
+    // TODO: implement fazerMassa
+    print('Tirar a casca');
+    super.fazerMassa();
+  }
 }
 
 //02º aula do Modulo 05 Dart:entenda a Orientção a Objeto
