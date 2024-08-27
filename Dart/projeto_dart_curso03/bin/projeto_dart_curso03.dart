@@ -1,8 +1,7 @@
 
 void main(){
-  //07 aula Modulo 01 do curso de Dart:Sintaxe, Coleção, Dinamismo
   //escolherMeioTransporte(0); 
-  escolherMeioTransporteEnum(Transporte.carro);
+  escolherMeioTransporteEnum(Transporte.skate);
 }
 
 void escolherMeioTransporte(int locomocao){
@@ -16,12 +15,20 @@ void escolherMeioTransporte(int locomocao){
 }
 
 void escolherMeioTransporteEnum(Transporte locomocao){
-  if (locomocao == Transporte.carro) {
-    print('Vou de CARRO para Aventura!');
-  } else if(locomocao == Transporte.bike){
-    print('Vou de BIKE para Aventura!');
-  }else {
-    print('Vou para a Aventura');
+
+  switch (locomocao){
+    case Transporte.carro:
+      print('Vou de CARRO para Aventura!');
+      break;
+    case Transporte.bike:
+      print('Vou de BIKE para Aventura!');
+      break;
+    case Transporte.onibus:
+      print('Vou de BUSÃO para Aventura!');
+      break;
+    default:
+      print('Estou indo para aventura, isso é o que importa!');
+      break;
   }
 }
 
@@ -29,6 +36,7 @@ void escolherMeioTransporteEnum(Transporte locomocao){
 enum Transporte{
   carro,
   bike,
+  onibus,
   andando,
   skate,
   aviao,
