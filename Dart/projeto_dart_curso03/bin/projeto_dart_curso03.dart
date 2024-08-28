@@ -1,7 +1,7 @@
 
 void main(){
 
-  escolherMeioTransporte(Transporte.skate);
+  //escolherMeioTransporte(Transporte.skate);
 
   Set<String> registrosVigitados = <String>{};
   registrosVigitados = registrarDestino('Rio de Janeiro', registrosVigitados);
@@ -13,7 +13,13 @@ void main(){
   registrarPrecos['São Paulo'] = 1900;
   registrarPrecos['Nova Iorque'] = 'Muito Caro';
 
-  print(registrarPrecos);
+  //print(registrarPrecos);
+
+  dynamic meuNumero = 7.1;
+  print(meuNumero.runtimeType);
+  meuNumero = 'String Qualquer';
+  print(meuNumero.runtimeType);
+
 }
 
 Set<String> registrarDestino(String destino, Set<String>banco){
