@@ -5,11 +5,15 @@ void main(){
 
   Set<String> registrosVigitados = <String>{};
   registrosVigitados = registrarDestino('Rio de Janeiro', registrosVigitados);
-  registrosVigitados = registrarDestino('São Paulo', registrosVigitados);
-  registrosVigitados = registrarDestino('Recife', registrosVigitados);
-  registrosVigitados = registrarDestino('Rio de Janeiro', registrosVigitados);
   
-  print(registrosVigitados);
+  Map<String, dynamic> registrarPrecos = {};
+
+  registrarPrecos['São Paulo'] = 1200;
+  registrarPrecos['Rio de Janeiro'] = 1500;
+  registrarPrecos['São Paulo'] = 1900;
+  registrarPrecos['Nova Iorque'] = 'Muito Caro';
+
+  print(registrarPrecos);
 }
 
 Set<String> registrarDestino(String destino, Set<String>banco){
