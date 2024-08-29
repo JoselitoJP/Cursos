@@ -20,6 +20,12 @@ void main(){
   meuNumero = 'String Qualquer';
   print(meuNumero.runtimeType);
 
+  Viagem viagemHoje = Viagem();
+}
+
+class Viagem {
+  static String codigoTrabalho = 'DJNADS12';
+  double dinheiro = 0;
 }
 
 Set<String> registrarDestino(String destino, Set<String>banco){
