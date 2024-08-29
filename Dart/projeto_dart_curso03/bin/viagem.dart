@@ -7,6 +7,8 @@ class Viagem {
   Set<String> registrosVigitados = <String>{};
   Map<String, dynamic> registrarPrecos = {};
 
+  int _totalLocaisVisitados = ;
+
   Viagem({required this.locomocao});
 
   printCodigo(){
@@ -36,6 +38,10 @@ class Viagem {
 
   void registrarPrecosVisita(String local, dynamic preco){
     registrarPrecos[local] = preco;
+  }
+
+  int get consultarTotalLocaisVisitados{
+    return _totalLocaisVisitados;
   }
 
 }
