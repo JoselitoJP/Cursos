@@ -1,7 +1,7 @@
 import 'controllers/bank_controller.dart';
 import 'models/account.dart';
 
-void main() {
+/*void main() {
   // Criando o banco
   BankController bankController = BankController();
 
@@ -22,4 +22,25 @@ void main() {
 
   // Observando resultado
   print(result);
+}*/
+
+void main(){
+  print("Started Main");
+  functionOne();
+  print("Finished Main");
+
+}
+
+void functionOne(){
+  print("Started F01");
+  functionTwo();
+  print("Finished F01");
+}
+
+void functionTwo(){
+  print("Started F02");
+  for (int i = 0; i <= 5; i++) {
+    print(i);
+  }
+  print("Finished F02");
 }
