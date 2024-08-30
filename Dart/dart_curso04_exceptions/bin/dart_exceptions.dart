@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'controllers/bank_controller.dart';
 import 'models/account.dart';
 
@@ -26,7 +28,11 @@ import 'models/account.dart';
 
 void main(){
   print("Started Main");
-  functionOne();
+  try {
+   functionOne(); 
+  } on FormatException { 
+    print("Foi capturada dentro da FunctionOne!");
+  }
   print("Finished Main");
 
 }
@@ -39,9 +45,16 @@ void functionOne(){
 
 void functionTwo(){
   print("Started F02");
-  for (int i = 0; i <= 5; i++) {
+  for (int i = 1; i <= 5; i++) {
     print(i);
     double amount = double.parse("Not a number");
+    
+    /* TODO:Uma forma de tratar o bugging com try on ForatException
+    try{
+    
+    } on FormatException{
+      print("A conversão não pôde ser feita!");
+    }*/
   }
   print("Finished F02");
 }
