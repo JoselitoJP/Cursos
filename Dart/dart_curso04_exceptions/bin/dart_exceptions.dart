@@ -41,6 +41,7 @@ void functionTwo(){
   print("Started F02");
   for (int i = 0; i <= 5; i++) {
     print(i);
+    double amount = double.parse("Not a number");
   }
   print("Finished F02");
 }
