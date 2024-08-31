@@ -30,8 +30,18 @@ void main(){
   print("Started Main");
   try {
    functionOne(); 
-  } on FormatException { 
+  } on FormatException catch(e) { 
     print("Foi capturada dentro da FunctionOne!");
+    print(e.message);
+    print(e.source);
+    print(e.toString());
+  } on HttpException catch(e){
+    e.toString();
+  } on IOException catch(e){
+    print("Uma IOException foi encontrada.");
+    e.toString();
+  } on Exception catch(e){
+    print(e.toString());
   }
   print("Finished Main");
 
