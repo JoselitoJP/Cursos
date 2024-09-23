@@ -1,0 +1,4 @@
+class SendeIdInavalidExcepitions implements Exception{}
+class ReceiverIdInvalidException implements Exception{}
+class SenderNotAuthenticatedException implements Exception{}
+class SenderBalanceLowerThanAmountExceptin implements Exception{}
