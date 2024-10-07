@@ -21,7 +21,7 @@ class BankController {
     // Verificar se ID de destinatário é válido
     if (!verifyId(idReceiver)) {
       //return false;
-      throw ReceiverIdInvalidException();
+      throw ReceiverIdInvalidException(idReceiver: idReceiver);
     }
 
     Account accountSender = _database[idSender]!;
@@ -30,13 +30,17 @@ class BankController {
     // Verificar se o remetente está autenticado
     if (!accountSender.isAuthenticated) {
       //return false;
-      throw SenderNotAuthenticatedException();
+      throw SenderNotAuthenticatedException(idSender: idSender);
     }
 
     // Verificar se o remetente possui saldo suficiente
     if (accountSender.balance < amount) {
       //return false;
-      throw SenderBalanceLowerThanAmountExceptin();
+      throw SenderBalanceLowerThanAmountExceptin(
+        idSender: idSender,
+        senderBalance: accountSender.balance,
+        amount: amount,
+      );
     }
 
     // Se tudo estiver certo, efetivar transação
