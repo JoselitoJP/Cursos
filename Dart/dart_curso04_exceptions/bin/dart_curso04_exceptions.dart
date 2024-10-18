@@ -5,10 +5,12 @@ import 'models/account.dart';
 import 'exceptions/bank_controller_esceptions.dart';
 
 void main() {
+  //assert(2 < 1, "Levantei o Assert");
   // Criando o banco
   BankController bankController = BankController();
 
   // Adicionando contas
+  //Account accountTest = Account(name: "", balance: 200, isAuthenticated: true);
   bankController.addAccount(
       id: "Ricarth",
       account:
