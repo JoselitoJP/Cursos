@@ -5,9 +5,22 @@ import 'models/account.dart';
 import 'exceptions/bank_controller_esceptions.dart';
 
 void main() {
-  print("MyString".runtimeType);
-  print(null.runtimeType);
-  Null;
+  //print("MyString".runtimeType);
+  //print(null.runtimeType);
+  //Null;
+
+  String naoPodeSerNula = "MyString";
+  //naoPodeSerNula = null;
+
+  String? podeSerNula = "MyString";
+  print(podeSerNula.runtimeType);
+  podeSerNula = null;
+  print(podeSerNula.runtimeType);
+
+  Account? myNullAccount;
+  //print(myNullAccount.balance);
+
+
   //assert(2 < 1, "Levantei o Assert");
   // Criando o banco
   BankController bankController = BankController();
@@ -65,3 +78,11 @@ void main(){
   print("Nunca chegará em mim!");
 }
 void testFunc(){throw "Ricarth";//throw Account(name: "Ricarth", balance: 200, isAuthenticated: true);}*/
+
+
+/*
+bool isEmpty(String string) => string.length == 0;
+main() {
+  isEmpty(null);
+}
+*/
