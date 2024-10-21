@@ -5,6 +5,9 @@ import 'models/account.dart';
 import 'exceptions/bank_controller_esceptions.dart';
 
 void main() {
+  print("MyString".runtimeType);
+  print(null.runtimeType);
+  Null;
   //assert(2 < 1, "Levantei o Assert");
   // Criando o banco
   BankController bankController = BankController();
@@ -32,7 +35,7 @@ void main() {
     
     // Observando resultado print(result);
     if (result) {
-      print("Transação concluida com sucesso!"); 
+      //print("Transação concluida com sucesso!"); 
     }  
   } on SendeIdInavalidExcepitions catch (e){
     print(e);
