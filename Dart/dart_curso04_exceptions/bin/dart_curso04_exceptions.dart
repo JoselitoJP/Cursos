@@ -13,10 +13,18 @@ void testingNullSafety(){
   int randomNumber = rng.nextInt(10);
   if (randomNumber <= 5) {
     myAccount = Account(name: "Ricarth", balance: 200, isAuthenticated: true);
-  }else{
-    print(randomNumber);
   }
+  /*else{print(randomNumber);}*/
+  print(myAccount.runtimeType);
+  //print(myAccount.balance);
+  //Conversão direta: Má prática (print(myAccount!.balance);)
 
+  //Forma de lidar com o null de forma segura
+  /*if (myAccount != null) {print(myAccount.balance);}else{print("Conta nula");}*/
+
+  /*Forma compactada de lidar com null*/print(myAccount != null ? myAccount.balance : "Conta nula.");
+
+  //Forma mais redusida de lidar com o null (print(myAccount?.balance);)-> o codigo só transforma o Null em objeto printavel 
 }
 
 void main() {
