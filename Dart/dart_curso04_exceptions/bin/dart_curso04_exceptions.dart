@@ -1,27 +1,28 @@
 import 'dart:io';
+import 'dart:math';
 
 import 'controllers/bank_controller.dart';
 import 'models/account.dart';
 import 'exceptions/bank_controller_esceptions.dart';
 
+void testingNullSafety(){
+  Account? myAccount;
+
+  //Simulando uma comunicação externa
+  Random rng = Random();
+  int randomNumber = rng.nextInt(10);
+  if (randomNumber <= 5) {
+    myAccount = Account(name: "Ricarth", balance: 200, isAuthenticated: true);
+  }else{
+    print(randomNumber);
+  }
+
+}
+
 void main() {
-  //print("MyString".runtimeType);
-  //print(null.runtimeType);
-  //Null;
 
-  String naoPodeSerNula = "MyString";
-  //naoPodeSerNula = null;
+  testingNullSafety();
 
-  String? podeSerNula = "MyString";
-  print(podeSerNula.runtimeType);
-  podeSerNula = null;
-  print(podeSerNula.runtimeType);
-
-  Account? myNullAccount;
-  //print(myNullAccount.balance);
-
-
-  //assert(2 < 1, "Levantei o Assert");
   // Criando o banco
   BankController bankController = BankController();
 
@@ -85,4 +86,24 @@ bool isEmpty(String string) => string.length == 0;
 main() {
   isEmpty(null);
 }
+*/
+
+/*
+  //print("MyString".runtimeType);
+  //print(null.runtimeType);
+  //Null;
+
+  String naoPodeSerNula = "MyString";
+  //naoPodeSerNula = null;
+
+  String? podeSerNula = "MyString";
+  print(podeSerNula.runtimeType);
+  podeSerNula = null;
+  print(podeSerNula.runtimeType);
+
+  Account? myNullAccount;
+  //print(myNullAccount.balance);
+
+
+  //assert(2 < 1, "Levantei o Assert");
 */
