@@ -6,23 +6,34 @@ import 'models/account.dart';
 import 'exceptions/bank_controller_esceptions.dart';
 
 void testingNullSafety(){
-  Account? myAccount;
+  Account? myAccount = Account(name: "Ricarth", balance: 200, isAuthenticated: true);
 
   //Simulando uma comunicação externa
   Random rng = Random();
   int randomNumber = rng.nextInt(10);
   if (randomNumber <= 5) {
-    myAccount = Account(name: "Ricarth", balance: 200, isAuthenticated: true);
+    myAccount.createdAt = DateTime.now();
   }
   /*else{print(randomNumber);}*/
   print(myAccount.runtimeType);
+  //Teste forçado que não funciona
   //print(myAccount.balance);
+  print(myAccount.createdAt);
+  //print(myAccount.createdAt!.day);
   //Conversão direta: Má prática (print(myAccount!.balance);)
 
-  //Forma de lidar com o null de forma segura
-  /*if (myAccount != null) {print(myAccount.balance);}else{print("Conta nula");}*/
+  //Teste usando if-else para conferir a possibilidade nula
+  if (myAccount != null) {
+    print(myAccount.balance);
+    if (myAccount.createdAt != null) {
+      print(myAccount.createdAt!.day);
+    }
+    }else{
+      print("Conta nula");
+    }
 
-  /*Forma compactada de lidar com null*/print(myAccount != null ? myAccount.balance : "Conta nula.");
+  //Forma compactada de lidar com null com Operador ternário
+  //print(myAccount != null ? myAccount.balance : "Conta nula.");
 
   //Forma mais redusida de lidar com o null (print(myAccount?.balance);)-> o codigo só transforma o Null em objeto printavel 
 }
@@ -97,6 +108,7 @@ main() {
 */
 
 /*
+
   //print("MyString".runtimeType);
   //print(null.runtimeType);
   //Null;
