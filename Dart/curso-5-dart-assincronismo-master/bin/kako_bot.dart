@@ -23,7 +23,7 @@ void main() async {
     } else if (TimeQuestions(usuario).isThisTime()) {
       // verificar antes, assim não fazemos toda a função sem precisar.
       TimeQuestions(usuario).timeQuestion();
-    } else if (false) {
+    }else if (false) {
       //Basta adicionar novas perguntas aqui!
     } else {
       print(kakoBot +
