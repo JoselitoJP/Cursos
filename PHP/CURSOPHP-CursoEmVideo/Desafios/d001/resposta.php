@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desfio PHP</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <h1>Resultado Final</h1>
+        <p>
+            <?php
+                $n = $_REQUEST["num"] ?? 0;
+                $a = $n - 1;
+                $s = $n + 1;
+
+                echo "O numero escolido foi <strong>$n</strong>";
+                echo "<br> O seu <em>Antecessor</em> foi $a";
+                echo "<br>O seu <em>Sucessor</em> foi $s";
+                
+            ?>
+        </p>
+            <button onclick="javascript:window.location.href='index.html'">&#x2B05; Voltar</button>
+            <!--
+            Outra forma de voltar para a pagina anterior
+            <button onclick="javascript:history.go(-1)">&#x2B05; Voltar</button>
+            -->
+    </main>
+</body>
+</html>
